@@ -1,0 +1,749 @@
+<mvc:View controllerName="com.iff.prodstatimixer.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:layout="sap.ui.layout"
+    xmlns:t="sap.ui.table"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page">
+        <!--title="{i18n>title}" -->
+        <headerContent>
+            <!--    <Button id="_IDGenButton1" icon="sap-icon://email" text="Send a message ..." tooltip="Send message through APC" press=".onPressSendMessage"/>
+        -->
+        </headerContent>
+        <content>
+            <layout:HorizontalLayout id="_IDGenHorizontalLayout1">
+                <layout:VerticalLayout id="_IDGenVerticalLayout1">
+                    <!--Below is the setting panel -->
+                    <viz:VizFrame id="idVizFrame"
+                        uiConfig="{applicationSet:'fiori'}"
+                        height='300px'
+                        width="800px"
+                        legendVisible="false"
+                        vizProperties="{
+                            general: { layout: { padding: 1 }},
+                            plotArea:  { dataLabel: {visible: true}},
+                            valueAxis: { label: {visible: false}, title: { visible: false}, layout:{ width: 0.001}},
+                            categoryAxis: { title: { visible: false }}
+                        }"
+                        renderComplete=".onRenderComplete2"
+                        vizType='stacked_column'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset id="_IDGenFlattenedDataset1"
+                                data="{/MixerStackSet}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition id="_IDGenDimensionDefinition1"
+                                        name="Arbpl"
+                                        value="{Arbpl}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition id="_IDGenMeasureDefinition_Komp"
+                                        name="Komp"
+                                        value="{Komp}" />
+                                    <viz.data:MeasureDefinition id="_IDGenMeasureDefinition_Akt"
+                                        name="Akt"
+                                        value="{Akt}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds>
+                            <viz.feeds:FeedItem id='valueAxisFeed'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="Komp,Akt" />
+                            <viz.feeds:FeedItem id='categoryAxisFeed'
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Arbpl" />
+                        </viz:feeds>
+                    </viz:VizFrame>
+
+
+                    <!--sap.ui.table.Table-->
+                    <t:Table id="idMixerOrderTable"
+                        rows="{ path: '/MixerStackTableSet', 
+                                    events: { dataReceived: '.onDataReceived'}
+                                  }"
+                        selectionMode="None"
+                        editable="false"
+                        columnHeaderVisible="false"
+                        visibleRowCount="13"
+                        rowHeight="1"
+                        width="820px"
+                        class="myVeryCompactTable sapUiSizeCompact">
+                        <t:columns>
+                            <t:Column id="_IDGenColumn1"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText1"
+                                        text="{C1Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn2"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText2"
+                                        text="{C2Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+
+                            <t:Column id="_IDGenColumn3"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText3"
+                                        text="{C3Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn4"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText4"
+                                        text="{C4Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn5"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText5"
+                                        text="{C5Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn6"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText6"
+                                        text="{C6Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn7"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText7"
+                                        text="{C7Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn8"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText8"
+                                        text="{C8Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn9"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText9"
+                                        text="{C9Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn10"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText10"
+                                        text="{C10Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn11"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText11"
+                                        text="{C11Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn12"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText12"
+                                        text="{C12Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn13"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText13"
+                                        text="{C13Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn14"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText14"
+                                        text="{C14Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn15"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText15"
+                                        text="{C15Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                        </t:columns>
+                    </t:Table>
+
+                    <viz:VizFrame id="idVizFrame2"
+                        uiConfig="{applicationSet:'fiori'}"
+                        visible="false"
+                        height='300px'
+                        width="800px"
+                        legendVisible="false"
+                        vizProperties="{
+                        general: { layout: { padding: 1 }},
+                        plotArea:  { dataLabel: {visible: true}},
+                        valueAxis: { label: {visible: false}, title: { visible: false}, layout:{ width: 0.001}},
+                        categoryAxis: { title: { visible: false }}
+                    }"
+                        renderComplete=".onRenderComplete2"
+                        vizType='column'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset id="_IDGenFlattenedDataset2"
+                                data="{/MixAktSet}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition id="_IDGenDimensionDefinition2"
+                                        name="Arbpl"
+                                        value="{Arbpl}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition id="_IDGenMeasureDefinition2"
+                                        name="Counter"
+                                        value="{Counter}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds>
+                            <viz.feeds:FeedItem id='valueAxisFeed2'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="Counter" />
+                            <viz.feeds:FeedItem id='categoryAxisFeed2'
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Arbpl" />
+                        </viz:feeds>
+                    </viz:VizFrame>
+
+                    <t:Table id="idMixAktOrderTable"
+                        rows="{ path: '/MixAktOrderSet', 
+                                    events: { dataReceived: '.onDataReceived'}
+                                  }"
+                        selectionMode="None"
+                        editable="false"
+                        columnHeaderVisible="false"
+                        visible="false"
+                        visibleRowCount="11"
+                        rowHeight="1"
+                        width="820px"
+                        class="myVeryCompactTable sapUiSizeCompact">
+                        <t:columns>
+                            <t:Column id="_IDGenColumn101"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText101"
+                                        text="{C1Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn102"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText102"
+                                        text="{C2Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+
+                            <t:Column id="_IDGenColumn103"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText103"
+                                        text="{C3Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn104"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText104"
+                                        text="{C4Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn105"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText105"
+                                        text="{C5Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn106"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText106"
+                                        text="{C6Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn107"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText107"
+                                        text="{C7Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn108"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText108"
+                                        text="{C8Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn109"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText109"
+                                        text="{C9Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn110"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText110"
+                                        text="{C10Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn111"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText111"
+                                        text="{C11Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn112"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText112"
+                                        text="{C12Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn113"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText113"
+                                        text="{C13Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn114"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText114"
+                                        text="{C14Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                            <t:Column id="_IDGenColumn115"
+                                width="100%"
+                                class="myMixerOrderText">
+                                <t:template>
+                                    <Text id="_IDGenText115"
+                                        text="{C15Info}"
+                                        wrapping="false"
+                                        class="myMixerOrderText" />
+                                </t:template>
+                            </t:Column>
+                        </t:columns>
+                    </t:Table>
+
+                    <!--   FSAK Dosierungen-->
+                    <viz:VizFrame id="idVizFrameFSAK"
+                        uiConfig="{applicationSet:'fiori'}"
+                        height='450px'
+                        width="800px"
+                        legendVisible="true"
+                        vizProperties="{
+                            general: { layout: { padding: 1 }},
+                            title:   { text: 'Dosierungsplan Sackstationen' },
+                            plotArea:  { dataLabel: {visible: false}, marker: {visible: false}, window: {start: 'firstDataPoint', end: 'lastDataPoint'}},
+                            valueAxis: { title: { visible: false}},
+                            categoryAxis: { title: { visible: false }},
+                            valueAxisScale: 'AutoScale'
+                        }"
+                        renderComplete=".onRenderComplete2"
+                        vizType='line'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset id="_IDGenFlattenedDatasetFSAK"
+                                data="{/DosierungZukunftSet}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition id="_IDGenDimensionDefinitionFSAK"
+                                        name="Zeit"
+                                        value="{path: 'Zeit',
+                                        formatter: '.dateConversion'}"
+                                        dataType="date"/>
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition id="idLG1"
+                                        name="FSAK"
+                                        value="{Lgort1}" />
+                                    <viz.data:MeasureDefinition id="idLG2"
+                                        name="Alt"
+                                        value="{Lgort2}" />
+                                    <viz.data:MeasureDefinition id="idLG3"
+                                        name="3"
+                                        value="{Lgort3}" />
+                                    <viz.data:MeasureDefinition id="idLG4"
+                                        name="4"
+                                        value="{Lgort4}" />
+                                    <viz.data:MeasureDefinition id="idLG5"
+                                        name="5"
+                                        value="{Lgort5}" />
+                                    <viz.data:MeasureDefinition id="idLG6"
+                                        name="6"
+                                        value="{Lgort6}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem id='valueAxisFeedFSAK1'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="FSAK" />
+                            <viz.feeds:FeedItem id='valueAxisFeedFSAK2'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="Alt" />
+                            <viz.feeds:FeedItem id='valueAxisFeedFSAK3'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="3" />
+                            <viz.feeds:FeedItem id='valueAxisFeedFSAK4'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="4" />
+                            <viz.feeds:FeedItem id='valueAxisFeedFSAK5'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="5" />
+                            <viz.feeds:FeedItem id='valueAxisFeedFSAK6'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="6" />
+                            <viz.feeds:FeedItem id='categoryAxisFeedFSAK1'
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Zeit" />
+                        </viz:feeds>
+                    </viz:VizFrame>
+
+                </layout:VerticalLayout>
+
+                <layout:VerticalLayout id="_IDGenVerticalLayout2">
+                    <layout:HorizontalLayout id="_IDGenHorizontalLayout2">
+                        <viz:VizFrame id="idVizFrameGMB"
+                            uiConfig="{applicationSet:'fiori'}"
+                            height='300px'
+                            width="400px"
+                            legendVisible="true"
+                            vizProperties="{
+                            general: { layout: { padding: 1 } },
+                            plotArea:  { dataLabel: {visible: true}},
+                            valueAxis: { label: {visible: false}, title: { visible: false}, layout:{ width: 0.001}},
+                            categoryAxis: { title: { visible: false }}
+                        }"
+                            renderComplete=".onRenderComplete2"
+                            vizType='column'>
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset id="_IDGenFlattenedDatasetGMB"
+                                    data="{/GmbSet}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition id="_IDGenDimensionDefinitionGMB"
+                                            name="Werks"
+                                            value="{Werks}" />
+                                    </viz.data:dimensions>
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition id="Status_B"
+                                            name="Benutzt"
+                                            value="{StatusB}" />
+                                        <viz.data:MeasureDefinition id="Status_G"
+                                            name="Gereinigt"
+                                            value="{StatusG}" />
+                                        <viz.data:MeasureDefinition id="Status_R"
+                                            name="Reserviert"
+                                            value="{StatusR}" />
+                                    </viz.data:measures>
+                                </viz.data:FlattenedDataset>
+                            </viz:dataset>
+                            <viz:feeds>
+                                <viz.feeds:FeedItem id='valueAxisFeedGMB1'
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="Reserviert" />
+                                <viz.feeds:FeedItem id='valueAxisFeedGMB2'
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="Gereinigt" />
+                                <viz.feeds:FeedItem id='valueAxisFeedGMB3'
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="Benutzt" />
+                                <viz.feeds:FeedItem id='categoryAxisFeedGMB'
+                                    uid="categoryAxis"
+                                    type="Dimension"
+                                    values="Werks" />
+                            </viz:feeds>
+                        </viz:VizFrame>
+
+                        <viz:VizFrame id="idVizFrameAbfPuffer"
+                            uiConfig="{applicationSet:'fiori'}"
+                            height='300px'
+                            width="400px"
+                            legendVisible="true"
+                            vizProperties="{
+                            general: { layout: { padding: 1 }},
+                            plotArea:  { dataLabel: {visible: true}},
+                            valueAxis: { label: {visible: false}, title: { visible: false}, layout:{ width: 0.001}},
+                            categoryAxis: { title: { visible: false }}
+                        }"
+                            renderComplete=".onRenderComplete"
+                            vizType='column'>
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset id="_IDGenFlattenedDatasetAbfPuffer"
+                                    data="{/AbfPufferSet}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition id="_IDGenDimensionDefinitionAbfPuffer"
+                                            name="Werks"
+                                            value="{Werks}" />
+                                    </viz.data:dimensions>
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition id="Status_B2"
+                                            name="BB"
+                                            value="{StatusB}" />
+                                        <viz.data:MeasureDefinition id="Status_G2"
+                                            name="GMB"
+                                            value="{StatusG}" />
+                                    </viz.data:measures>
+                                </viz.data:FlattenedDataset>
+                            </viz:dataset>
+                            <viz:feeds>
+                                <viz.feeds:FeedItem id='valueAxisFeedAbfPuffer1'
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="GMB" />
+                                <viz.feeds:FeedItem id='valueAxisFeedAbfPuffer2'
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="BB" />
+                                <viz.feeds:FeedItem id='categoryAxisFeedAbfPuffer'
+                                    uid="categoryAxis"
+                                    type="Dimension"
+                                    values="Werks" />
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </layout:HorizontalLayout>
+                    <viz:VizFrame id="idVizFrame3"
+                        uiConfig="{applicationSet:'fiori'}"
+                        height='200px'
+                        width="800px"
+                        legendVisible="false"
+                        vizProperties="{
+                            general: { layout: { padding: 1 }},
+                            plotArea:  { dataLabel: {visible: true}},
+                            valueAxis: { label: {visible: false}, title: { visible: false}, layout:{ width: 0.001}},
+                            categoryAxis: { title: { visible: false }}
+                        }"
+                        renderComplete=".onRenderComplete2"
+                        vizType='column'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset id="_IDGenFlattenedDataset3"
+                                data="{/MixerErlSet}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition id="_IDGenDimensionDefinition3"
+                                        name="Arbpl"
+                                        value="{Arbpl}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition id="_IDGenMeasureDefinition3"
+                                        name="Counter"
+                                        value="{Counter}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds>
+                            <viz.feeds:FeedItem id='valueAxisFeed3'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="Counter" />
+                            <viz.feeds:FeedItem id='categoryAxisFeed3'
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Arbpl" />
+                        </viz:feeds>
+                    </viz:VizFrame>
+
+                    <viz:VizFrame id="idVizFrameDosierung"
+                        uiConfig="{applicationSet:'fiori'}"
+                        height='450px'
+                        width="800px"
+                        legendVisible="true"
+                        vizProperties="{
+                            general: { layout: { padding: 1 }},
+                            title:   { text: 'Dosierungen' },
+                            plotArea:  { dataLabel: {visible: false}, marker: {visible: false}, window: {start: 'firstDataPoint', end: 'lastDataPoint'}},
+                            valueAxis: { title: { visible: false}},
+                            categoryAxis: { title: { visible: false }},
+                            valueAxisScale: 'AutoScale'
+                        }"
+                        renderComplete=".onRenderComplete2"
+                        vizType='line'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset id="_IDGenFlattenedDatasetDosierung"
+                                data="{/DosierungSet}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition id="_IDGenDimensionDefinitionDosierung"
+                                        name="Zeit"
+                                        value="{path: 'Zeit',
+                                        formatter: '.dateConversion'}"
+                                        dataType="date"/>
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition id="FDO1"
+                                        name="FDO1"
+                                        value="{Lgort1}" />
+                                    <viz.data:MeasureDefinition id="FDO2"
+                                        name="FDO2"
+                                        value="{Lgort2}" />
+                                    <viz.data:MeasureDefinition id="FRAB"
+                                        name="FRAB"
+                                        value="{Lgort3}" />
+                                    <viz.data:MeasureDefinition id="FSAK"
+                                        name="FSAK"
+                                        value="{Lgort4}" />
+                                    <viz.data:MeasureDefinition id="FVW1"
+                                        name="FVW1"
+                                        value="{Lgort5}" />
+                                    <viz.data:MeasureDefinition id="FVW2"
+                                        name="FVW2"
+                                        value="{Lgort6}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem id='valueAxisFeedDos1'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="FDO1" />
+                            <viz.feeds:FeedItem id='valueAxisFeedDos2'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="FDO2" />
+                            <viz.feeds:FeedItem id='valueAxisFeedDos3'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="FRAB" />
+                            <viz.feeds:FeedItem id='valueAxisFeedDos4'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="FSAK" />
+                            <viz.feeds:FeedItem id='valueAxisFeedDos5'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="FVW1" />
+                            <viz.feeds:FeedItem id='valueAxisFeedDos6'
+                                uid="valueAxis"
+                                type="Measure"
+                                values="FVW2" />
+                            <viz.feeds:FeedItem id='categoryAxisFeedDos1'
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Zeit" />
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+        </content>
+    </Page>
+</mvc:View>

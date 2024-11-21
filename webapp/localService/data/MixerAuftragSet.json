@@ -1,0 +1,142 @@
+[
+    {
+        "Aufnr": "Aufnr1",
+        "Maktx": "Maktx1",
+        "Arbpl": "Arbpl1",
+        "Sofort": false,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr2",
+        "Maktx": "Maktx2",
+        "Arbpl": "Arbpl2",
+        "Sofort": true,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr3",
+        "Maktx": "Maktx3",
+        "Arbpl": "Arbpl3",
+        "Sofort": true,
+        "Gmb": false
+    },
+    {
+        "Aufnr": "Aufnr4",
+        "Maktx": "Maktx4",
+        "Arbpl": "Arbpl4",
+        "Sofort": false,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr5",
+        "Maktx": "Maktx5",
+        "Arbpl": "Arbpl5",
+        "Sofort": true,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr6",
+        "Maktx": "Maktx6",
+        "Arbpl": "Arbpl6",
+        "Sofort": false,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr7",
+        "Maktx": "Maktx7",
+        "Arbpl": "Arbpl7",
+        "Sofort": false,
+        "Gmb": false
+    },
+    {
+        "Aufnr": "Aufnr8",
+        "Maktx": "Maktx8",
+        "Arbpl": "Arbpl8",
+        "Sofort": true,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr9",
+        "Maktx": "Maktx9",
+        "Arbpl": "Arbpl9",
+        "Sofort": false,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr10",
+        "Maktx": "Maktx10",
+        "Arbpl": "Arbpl10",
+        "Sofort": true,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr11",
+        "Maktx": "Maktx11",
+        "Arbpl": "Arbpl11",
+        "Sofort": true,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr12",
+        "Maktx": "Maktx12",
+        "Arbpl": "Arbpl12",
+        "Sofort": false,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr13",
+        "Maktx": "Maktx13",
+        "Arbpl": "Arbpl13",
+        "Sofort": false,
+        "Gmb": false
+    },
+    {
+        "Aufnr": "Aufnr14",
+        "Maktx": "Maktx14",
+        "Arbpl": "Arbpl14",
+        "Sofort": true,
+        "Gmb": false
+    },
+    {
+        "Aufnr": "Aufnr15",
+        "Maktx": "Maktx15",
+        "Arbpl": "Arbpl15",
+        "Sofort": true,
+        "Gmb": false
+    },
+    {
+        "Aufnr": "Aufnr16",
+        "Maktx": "Maktx16",
+        "Arbpl": "Arbpl16",
+        "Sofort": true,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr17",
+        "Maktx": "Maktx17",
+        "Arbpl": "Arbpl17",
+        "Sofort": true,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr18",
+        "Maktx": "Maktx18",
+        "Arbpl": "Arbpl18",
+        "Sofort": false,
+        "Gmb": true
+    },
+    {
+        "Aufnr": "Aufnr19",
+        "Maktx": "Maktx19",
+        "Arbpl": "Arbpl19",
+        "Sofort": false,
+        "Gmb": false
+    },
+    {
+        "Aufnr": "Aufnr20",
+        "Maktx": "Maktx20",
+        "Arbpl": "Arbpl20",
+        "Sofort": false,
+        "Gmb": true
+    }
+]

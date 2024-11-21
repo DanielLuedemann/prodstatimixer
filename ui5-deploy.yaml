@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+ 
+specVersion: "2.5"
+metadata:
+  name: com.novataste.prodstatimixer
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: http://WIBERGS4.adswiberg.lan.wiberg.at:8001
+          client: "040"
+        app:
+          name: ZPRODSTATIMIXER
+          description: Anwendung für Visualisierung von ProdStati Daten
+          package: ZVISU
+          transport: WZ1K961588
+        credentials:
+          username: env:XYZ_USER
+          password: env:XYZ_PASSWORD

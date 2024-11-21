@@ -1,0 +1,50 @@
+/* Enter your custom styles here */
+.myMixerOrderText {
+    font-weight: bold;
+    font-size: 0.5rem;
+    border-bottom: 0.0rem;
+}
+
+.green {
+    background-color: #66FF33;
+}
+
+.red {
+    background-color: #FF0000;
+}
+
+.orange {
+    background-color: #f89e29d2;
+}
+
+
+.default {
+    background-color: #ffffff;
+}
+
+.myVeryCompactTable.myVeryCompactTable  .sapUiTableCellInner{
+    padding: 1px;    
+}
+
+.sapUiTableCell {
+    padding: 0px 1px 0px 1px !important;
+    border-bottom: 0.0rem;
+    line-height: 0.7rem;
+ 
+}
+
+.sapUiTableTr>td {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+.sapUiTableTr {
+    height: 15px;
+}
+
+#_IDGenColumn111 {
+    /* Row 1 */
+    text-align: left !important;
+    background: aqua;
+    height: 1rem !important;
+}
